@@ -1,4 +1,4 @@
-import { Stack, Typography } from '@mui/material';
+import { Stack } from '@mui/material';
 import type { NextPage } from 'next';
 import Layout from '../components/Layout';
 import LinkButton from '../components/LinkButton';
