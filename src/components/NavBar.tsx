@@ -6,7 +6,14 @@ import profileImage from '../images/profile-image.jpeg';
 export default function NavBar() {
   return (
     <Stack direction='row' alignItems='center'>
-      <Avatar src={profileImage} />
+      <Avatar>
+        <Image
+          id='profile__img'
+          src={profileImage}
+          layout='fill'
+          objectFit='cover'
+        />
+      </Avatar>
 
       <IconButton>
         <ShareIcon />
@@ -15,10 +22,15 @@ export default function NavBar() {
   );
 }
 
-const Avatar = styled(Image)({
+const Avatar = styled('div')({
+  position: 'relative',
   width: 88,
   height: 88,
-  borderRadius: 275,
+  borderRadius: '50%',
+
+  '& img': {
+    borderRadius: '50%',
+  },
 });
 
 const IconButton = styled(MuiIconButton)({

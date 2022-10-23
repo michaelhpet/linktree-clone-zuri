@@ -15,11 +15,15 @@ export default function LinkButton(props: Props) {
 }
 
 const StyledLink = styled('a')(({ theme }) => ({
+  // container
+  display: 'block',
+
   // text
   color: '#101828',
   fontSize: '18px',
   fontWeight: 600,
   lineHeight: '28px',
+  textDecoration: 'none',
   textAlign: 'center',
 
   // background
