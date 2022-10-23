@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <Layout>
       <Stack spacing={3}>
         {[0, 1, 2, 3, 4, 5].map((itm) => (
-          <LinkButton key='itm' href='#' label='Button' />
+          <LinkButton key={itm} href='#' label='Button' />
         ))}
       </Stack>
     </Layout>
