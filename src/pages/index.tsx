@@ -1,14 +1,20 @@
 import { Stack } from '@mui/material';
 import type { NextPage } from 'next';
 import Layout from '../components/Layout';
-import LinkButton from '../components/LinkButton';
+import ButtonLink from '../components/ButtonLink';
+import buttonLinks from '../utils/buttonLinks';
 
 const Home: NextPage = () => {
   return (
     <Layout>
       <Stack spacing={3}>
-        {[0, 1, 2, 3, 4, 5].map((itm) => (
-          <LinkButton key={itm} href='#' label='Button' />
+        {buttonLinks.map((link) => (
+          <ButtonLink
+            key={link.id}
+            id={link.id}
+            href={link.href}
+            label={link.label}
+          />
         ))}
       </Stack>
     </Layout>

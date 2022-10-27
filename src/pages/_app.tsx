@@ -1,11 +1,18 @@
-import { CssBaseline } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Inter',
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <title>Linktree Page Clone</title>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
@@ -18,8 +25,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel='stylesheet'
         />
       </Head>
-      <CssBaseline />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }
