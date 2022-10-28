@@ -1,35 +1,50 @@
-import { styled } from '@mui/material';
+import { Stack, styled } from '@mui/material';
 import Link from 'next/link';
-import { ButtonLinkProps } from '../utils/buttonLinks';
+import iconLinks from '../utils/iconLinks';
 
 export default function SocialButtonLink() {
-  return <StyledLink>{props.label}</StyledLink>;
+  return (
+    <Button>
+      {iconLinks.map((Itm) => (
+        <Link key={Itm.id} href={Itm.href} passHref>
+          <IconLink target='_blank' rel='noreferrer'>
+            <Itm.icon />
+          </IconLink>
+        </Link>
+      ))}
+    </Button>
+  );
 }
 
-const StyledLink = styled('a')(({ theme }) => ({
+const Button = styled(Stack)(({ theme }) => ({
   // container
-  display: 'block',
-
-  // text
-  color: 'rgba(16, 24, 40, 1)',
-  fontSize: '18px',
-  fontWeight: 500,
-  lineHeight: '28px',
-  textDecoration: 'none',
-  textAlign: 'center',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: theme.spacing(3),
+  padding: `${theme.spacing(3)} ${theme.spacing(4)}`,
 
   // background
-  padding: `${theme.spacing(3)} ${theme.spacing(4)}`,
-  border: '1px solid rgba(234, 236, 240, 1)',
   borderRadius: theme.spacing(1),
-  background: 'rgba(234, 236, 240, 1)',
+  background: 'rgba(255, 255, 255, 1)',
 
   '&:hover': {
-    background: 'rgba(208, 213, 221, 1)',
-    borderColor: 'rgba(208, 213, 221, 1)',
+    background: 'rgba(242, 244, 247, 1)',
+    borderColor: 'rgba(242, 244, 247, 1)',
   },
 
   '&:active': {
     borderColor: 'rgba(152, 162, 179, 1)',
+    boxShadow: '0 1px 2px rgba(16, 24, 40, 0.05)',
   },
 }));
+
+const IconLink = styled('a')({
+  height: 24,
+  textDecoration: 'none',
+
+  '& .MuiSvgIcon-root': {
+    width: 24,
+    height: 24,
+  },
+});

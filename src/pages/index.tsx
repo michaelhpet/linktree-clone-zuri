@@ -3,11 +3,12 @@ import type { NextPage } from 'next';
 import Layout from '../components/Layout';
 import ButtonLink from '../components/ButtonLink';
 import buttonLinks from '../utils/buttonLinks';
+import SocialButtonLink from '../components/SocialButtonLink';
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Stack spacing={3}>
+      <Stack spacing={3} mb={8}>
         {buttonLinks.map((link) => (
           <ButtonLink
             key={link.id}
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
             label={link.label}
           />
         ))}
+        <SocialButtonLink />
       </Stack>
     </Layout>
   );
