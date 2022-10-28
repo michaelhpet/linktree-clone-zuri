@@ -15,4 +15,8 @@ export default function Footer() {
 
 const IconLink = styled('a')({
   textDecoration: 'none',
+
+  '& .MuiSvgIcon-root': {
+    
+  }
 });
