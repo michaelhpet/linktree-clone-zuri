@@ -25,6 +25,7 @@ export default function NavBar() {
         <Stack spacing={3} alignItems='center' mt='20px'>
           <Avatar>
             <Image
+              alt='Profile photo'
               id='profile__img'
               src={profileImage}
               layout='fill'
