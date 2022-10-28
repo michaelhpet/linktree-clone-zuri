@@ -9,13 +9,13 @@ interface IconLink {
 
 const iconLinks: IconLink[] = [
   {
-    id: 'asks',
+    id: 'slack',
     href: '#',
     icon: SlackIcon,
   },
   {
-    id: 'asrw',
-    href: '#',
+    id: 'github',
+    href: 'https://github.com/michael-peter/linktree-clone',
     icon: GitHubIcon,
   },
 ];

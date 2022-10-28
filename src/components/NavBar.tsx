@@ -4,14 +4,19 @@ import {
   Stack,
   Typography,
   Tooltip as MuiTooltip,
-  tooltipClasses,
+  useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import Image from 'next/image';
 import Camera from '../icons/CameraIcon';
+import MenuIcon from '../icons/MenuIcon';
 import Share from '../icons/ShareIcon';
 import profileImage from '../images/dp.jpg';
 
 export default function NavBar() {
+  const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <GridContainer spacing={3}>
       <GridItem xs={2} sm={4} />
@@ -38,9 +43,7 @@ export default function NavBar() {
 
       <GridItem xs={2} sm={4}>
         <Tooltip arrow title='Share link' placement='left'>
-          <IconButton>
-            <ShareIcon />
-          </IconButton>
+          <IconButton>{smDown ? <MenuIcon /> : <ShareIcon />}</IconButton>
         </Tooltip>
       </GridItem>
     </GridContainer>
