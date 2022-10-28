@@ -7,7 +7,8 @@ export default function SocialButtonLink() {
     <Button>
       {iconLinks.map((Itm) => (
         <Link key={Itm.id} href={Itm.href} passHref>
-          <IconLink target='_blank' rel='noreferrer'>
+          <IconLink
+            {...(Itm.href !== '#' && { target: '_blank', rel: 'noreferrer' })}>
             <Itm.icon />
           </IconLink>
         </Link>

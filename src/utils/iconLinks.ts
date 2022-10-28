@@ -15,7 +15,7 @@ const iconLinks: IconLink[] = [
   },
   {
     id: 'github',
-    href: 'https://github.com/michael-peter/linktree-clone',
+    href: 'https://github.com/michael-peter/linktree-clone-zuri',
     icon: GitHubIcon,
   },
 ];
