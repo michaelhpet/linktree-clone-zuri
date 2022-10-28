@@ -1,13 +1,15 @@
-import { styled } from '@mui/material';
+import { styled, Tooltip } from '@mui/material';
 import Link from 'next/link';
 import { ButtonLinkProps } from '../utils/buttonLinks';
 
 export default function ButtonLink(props: ButtonLinkProps) {
   return (
     <Link href={props.href} passHref>
-      <StyledLink id={props.id} target='_blank' rel='noreferrer'>
-        {props.label}
-      </StyledLink>
+      <Tooltip arrow title={props.title}>
+        <StyledLink id={props.id} target='_blank' rel='noreferrer'>
+          {props.label}
+        </StyledLink>
+      </Tooltip>
     </Link>
   );
 }

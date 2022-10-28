@@ -15,6 +15,7 @@ const Home: NextPage = () => {
             id={link.id}
             href={link.href}
             label={link.label}
+            {...(link.title && { title: link.title })}
           />
         ))}
         <SocialButtonLink />
