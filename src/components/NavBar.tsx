@@ -1,7 +1,15 @@
-import { styled, Grid, Stack, Typography } from '@mui/material';
+import {
+  styled,
+  Grid,
+  Stack,
+  Typography,
+  Tooltip as MuiTooltip,
+  tooltipClasses,
+} from '@mui/material';
+import Image from 'next/image';
 import Camera from '../icons/CameraIcon';
 import Share from '../icons/ShareIcon';
-import profileImage from '../images/profile-image.jpeg';
+import profileImage from '../images/dp.jpg';
 
 export default function NavBar() {
   return (
@@ -11,17 +19,29 @@ export default function NavBar() {
       <GridItem xs={8} sm={4}>
         <Stack spacing={3} alignItems='center' mt='20px'>
           <Avatar>
+            <Image
+              id='profile__img'
+              src={profileImage}
+              layout='fill'
+              objectFit='cover'
+            />
+            <AvatarOverlay />
             <CameraIcon />
           </Avatar>
 
-          <DisplayName>Annette Black</DisplayName>
+          <DisplayName>Michael Peter</DisplayName>
+          <DisplayName id='slack' sx={{ display: 'none' }}>
+            kael
+          </DisplayName>
         </Stack>
       </GridItem>
 
       <GridItem xs={2} sm={4}>
-        <IconButton>
-          <ShareIcon />
-        </IconButton>
+        <Tooltip arrow title='Share link' placement='left'>
+          <IconButton>
+            <ShareIcon />
+          </IconButton>
+        </Tooltip>
       </GridItem>
     </GridContainer>
   );
@@ -47,24 +67,28 @@ const Avatar = styled('div')({
   position: 'relative',
   width: 88,
   height: 88,
-  borderRadius: '50%',
-  background: `url(${profileImage.src})`,
-  backgroundSize: '88px',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  backgroundBlendMode: 'overlay',
-  transition: 'all 0.2s',
+
+  '&, & img': { borderRadius: '50%' },
 
   '&:hover': {
     cursor: 'pointer',
-    backgroundColor: 'rgba(52, 64, 84, 0.75)',
 
     '& .MuiSvgIcon-root': { opacity: 1 },
+    '& div': { backgroundColor: 'rgba(52, 64, 84, 0.75)' },
   },
 
   '&:active': {
     outline: 'solid 5.5px rgba(235, 233, 254, 1)',
   },
+});
+
+const AvatarOverlay = styled('div')({
+  position: 'absolute',
+  width: 88,
+  height: 88,
+  borderRadius: '50%',
+  backgroundColor: 'transparent',
+  transition: 'all 0.2s',
 });
 
 const DisplayName = styled(Typography)({
@@ -107,4 +131,11 @@ const CameraIcon = styled(Camera)({
   right: 34,
   color: 'transparent',
   opacity: 0,
+});
+
+const Tooltip = styled((props: any) => <MuiTooltip arrow {...props} />)({
+  '& .MuiTooltip-popper': {
+    background: 'pink',
+    padding: '16px',
+  },
 });

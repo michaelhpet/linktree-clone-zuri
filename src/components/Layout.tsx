@@ -1,4 +1,5 @@
 import { Container } from '@mui/material';
+import Footer from './Footer';
 import NavBar from './NavBar';
 
 export default function Layout(props: any) {
@@ -6,6 +7,7 @@ export default function Layout(props: any) {
     <Container>
       <NavBar />
       {props.children}
+      <Footer />
     </Container>
   );
 }

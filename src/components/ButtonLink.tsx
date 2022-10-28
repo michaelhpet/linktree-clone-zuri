@@ -5,7 +5,9 @@ import { ButtonLinkProps } from '../utils/buttonLinks';
 export default function ButtonLink(props: ButtonLinkProps) {
   return (
     <Link href={props.href} passHref>
-      <StyledLink id={props.id}>{props.label}</StyledLink>
+      <StyledLink id={props.id} target='_blank' rel='noreferrer'>
+        {props.label}
+      </StyledLink>
     </Link>
   );
 }

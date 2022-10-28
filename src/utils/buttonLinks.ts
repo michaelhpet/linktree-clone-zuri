@@ -6,33 +6,33 @@ export interface ButtonLinkProps {
 
 const buttonLinks: ButtonLinkProps[] = [
   {
-    id: 'asks',
-    href: '#',
+    id: 'twitter',
+    href: 'https://twitter.com/PeterHMichael',
     label: 'Twitter Link',
   },
   {
-    id: 'asrw',
-    href: '#',
+    id: 'btn__zuri',
+    href: 'https://training.zuri.team/',
     label: 'Zuri Team',
   },
   {
-    id: 'asrw',
-    href: '#',
+    id: 'books',
+    href: 'http://books.zuri.team/',
     label: 'Zuri Books',
   },
   {
-    id: 'asrw',
-    href: '#',
+    id: 'book__python',
+    href: 'https://books.zuri.team/',
     label: 'Python Books',
   },
   {
-    id: 'asrw',
-    href: '#',
+    id: 'pitch',
+    href: 'https://background.zuri.team/',
     label: 'Background Check for Coders',
   },
   {
-    id: 'asrw',
-    href: '#',
+    id: 'book__design',
+    href: 'https://books.zuri.team/design-rules',
     label: 'Design Books',
   },
 ];
